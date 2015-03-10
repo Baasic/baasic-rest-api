@@ -1,0 +1,6 @@
+*.orig
+*.zip
+
+**/node_modules/
+**/bower_components/
+
