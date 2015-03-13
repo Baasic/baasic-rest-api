@@ -22,22 +22,22 @@ Asynchronous operation containing versions of all Baasic modules.
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 

@@ -13,7 +13,18 @@ Asynchronously unsubscribes the current user from a whole segment.
 - ***apiKey*** - Required (string). A value that uniquely identifies user&#39;s application on the system. 
 
 
-- ***segment*** - Required (string). A name which uniquely identifies segment from which the current user needs to be unsubscribed. 
+- ***segment*** - Required (string). Segment is convention based name for parts of the system, modules, cross-cutting modules, etc. This value
+            will uniquely identify segment from which the current user needs to be unsubscribed. Supported values are:
+	- "article"
+	- "article"
+	- "articletag"
+	- "article/archive"
+	- "article"
+	- "articletag"
+	- "articletag"
+	- "article/publish"
+	- "article/publish/tag"
+
 
 
 * * *
@@ -22,27 +33,27 @@ Asynchronously unsubscribes the current user from a whole segment.
 
 - ***204  No Content*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action has been successfully processed, but the response is intentionally blank. 
+ Requested action has been successfully processed, but the response is intentionally blank. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 
@@ -50,5 +61,3 @@ Asynchronously unsubscribes the current user from a whole segment.
 ### *Notes:* 
 - Each object contains ***Links*** array property where each item in the array is a link description object which describes the link relations of the instances. The link relations are described by the ***href*** and ***templated*** properties. For more details on the HAL conventions see: [Hypertext Application Language] (http://stateless.co/hal_specification.html).
 
--  Segment is convention based name for parts of the system, modules, cross-cutting modules, etc. Supported
-  values are: TODO XML 

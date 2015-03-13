@@ -1,4 +1,85 @@
 
+### Core
+
+* **lookups**
+  * [GET] (lookup-get)
+
+* **versions**
+  * [GET] (version-get-applications)
+
+
+
+### Application
+
+* **applications**
+  * [DELETE] (applications-delete)
+  * [GET] (applications-get)
+  * [PUT] (applications-put)
+  * **activate**
+    * [PUT] (applications-put-activate)
+  * **deactivate**
+    * [PUT] (applications-put-deactivate)
+
+
+
+### Membership
+
+* **login**
+  * [DELETE] (login-delete)
+  * [GET] (login-get)
+  * [POST] (login-post)
+  * [PUT] (login-put)
+
+* **permissions**
+  * [POST] (permissions-post)
+  * **sections**
+    * [GET] (permissions-get-by-search-criteria)
+    * **actions**
+      * **roles**
+	    * [DELETE] (permissions-delete-by-role)
+      * **users**
+	    * [DELETE] (permissions-delete-by-username)
+  * **actions**
+    * [GET] (permissions-get)
+    * [GET (By Search String)] (permissions-get-by-search-string)
+
+* **roles**
+  * [DELETE] (role-delete)
+  * [GET (By Search Criteria)] (role-get-by-search-criteria)
+  * [GET] (role-get)
+  * [POST] (role-post)
+  * [PUT] (role-put)
+
+* **recover-password**
+  * [POST] (recover-password-post)
+  * [PUT] (recover-password-put)
+
+* **users**
+  * [DELETE] (user-delete)
+  * [GET] (user-get)
+  * [GET (By Search Criteria)] (user-get-by-search-criteria)
+  * [POST] (user-post)
+  * [PUT] (user-put-update)
+  * **approve**
+    * [PUT] (user-put-approve)
+  * **disapprove**
+    * [PUT] (user-put-disapprove)
+  * **lock**
+    * [PUT] (user-put-lock)
+  * **unlock**
+    * [PUT] (user-put-unlock)
+  * **change-password**
+    * [PUT] (user-put-update-password)
+  * **exists**
+    * [GET] (user-get-checkusername)
+
+* **register**
+  * [POST] (register-post)
+  * **activate**
+    * [PUT] (register-put)
+
+
+
 ### Key Value
 
 * **key-values**
@@ -115,77 +196,6 @@
 
 
 
-### Membership
-
-* **login**
-  * [DELETE] (login-delete)
-  * [GET] (login-get)
-  * [POST] (login-post)
-  * [PUT] (login-put)
-
-* **permissions**
-  * [POST] (permissions-post)
-  * **sections**
-    * [GET] (permissions-get-by-search-criteria)
-    * **actions**
-      * **roles**
-	    * [DELETE] (permissions-delete-by-role)
-      * **users**
-	    * [DELETE] (permissions-delete-by-username)
-  * **actions**
-    * [GET] (permissions-get)
-    * [GET (By Search String)] (permissions-get-by-search-string)
-
-* **roles**
-  * [DELETE] (role-delete)
-  * [GET (By Search Criteria)] (role-get-by-search-criteria)
-  * [GET] (role-get)
-  * [POST] (role-post)
-  * [PUT] (role-put)
-
-* **recover-password**
-  * [POST] (recover-password-post)
-  * [PUT] (recover-password-put)
-
-* **users**
-  * [DELETE] (user-delete)
-  * [GET] (user-get)
-  * [GET (By Search Criteria)] (user-get-by-search-criteria)
-  * [POST] (user-post)
-  * [PUT] (user-put-update)
-  * **approve**
-    * [PUT] (user-put-approve)
-  * **disapprove**
-    * [PUT] (user-put-disapprove)
-  * **lock**
-    * [PUT] (user-put-lock)
-  * **unlock**
-    * [PUT] (user-put-unlock)
-  * **change-password**
-    * [PUT] (user-put-update-password)
-  * **exists**
-    * [GET] (user-get-checkusername)
-
-* **register**
-  * [POST] (register-post)
-  * **activate**
-    * [PUT] (register-put)
-
-
-
-### Application
-
-* **applications**
-  * [DELETE] (applications-delete)
-  * [GET] (applications-get)
-  * [PUT] (applications-put)
-  * **activate**
-    * [PUT] (applications-put-activate)
-  * **deactivate**
-    * [PUT] (applications-put-deactivate)
-
-
-
 ### Subscription System
 
 * **subscriptions**
@@ -204,17 +214,6 @@
     * [DELETE (Part)] (subscription-delete-segment-part-user)
 
 
-
-### Core
-
-* **lookups**
-  * [GET] (lookup-get)
-
-
-
-### Version
-
-* **versions**
-  * [GET] (version-get-applications)
+nt-part-user)
 
 

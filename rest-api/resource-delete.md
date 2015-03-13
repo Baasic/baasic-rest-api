@@ -1,8 +1,8 @@
 
-# DELETE : {apiKey}/resources/{resourceName}/{id} 
+# DELETE : {apiKey}/resources/{schemaName}/{id} 
 
 ### *Description:* 
-Asynchronously deletes previously created dynamic entry resource from the system. 
+Asynchronously deletes previously created dynamic resource from the system. 
 
 
 
@@ -13,10 +13,10 @@ Asynchronously deletes previously created dynamic entry resource from the system
 - ***apiKey*** - Required (string). A value that uniquely identifies user&#39;s application on the system. 
 
 
-- ***id*** - Required (string). A value which uniquely identifies dynamic entry resource that needs to be deleted. 
+- ***id*** - Required (string). A value which uniquely identifies dynamic resource that needs to be deleted. 
 
 
-- ***resourceName*** - Required (string). Name of dynamic schema whose dynamic entry resource needs to be deleted. 
+- ***schemaName*** - Required (string). Name of dynamic schema whose dynamic resource needs to be deleted. 
 
 
 * * *
@@ -25,32 +25,32 @@ Asynchronously deletes previously created dynamic entry resource from the system
 
 - ***204  No Content*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dynamic entry resource is successfully deleted from the system. 
+ Dynamic resource is successfully deleted from the system. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specified dynamic entry resource does not exist in the system. 
+ Specified dynamic resource does not exist in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 

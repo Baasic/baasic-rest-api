@@ -16,24 +16,29 @@ Asynchronously retrieves access action resources that match the specified search
 - ***embed*** - Optional (string). Comma separated list of resources to be contained within the current representation. 
 
 
-- ***sort*** - Optional (string). A string used to set the permission property to sort the result collection by. 
+- ***sort*** - Optional (string). A string used to set the access action property to sort the result collection by. For complete list of
+            available properties, see the JSON representation of access action object under the Response Codes section. 
 
 
-- ***searchQuery*** - Optional (string). Only access actions whose name abbreviation matches a search string will be listed. 
+- ***searchQuery*** - Optional (string). A string value used to identify access action resources in the system. Only access actions whose name
+            abbreviation matches a search string will be listed (search is case-insensitive). 
 
 
 - ***sectionAbrv*** - Required (string). Section abbreviation which identifies part of the application for which security privileges can be retrieved
-            and managed. Following section abbreviations are supported:
-            - &quot;KeyValueStore&quot;,
-            - &quot;ValueSetStore&quot;,
-            - &quot;ArticleModule&quot;,
-            - &quot;ArticleArchiveModule&quot;,
-            - &quot;ArticleRatingModule&quot;,
-            - &quot;ResourceSchema&quot;,
-            - &quot;DynamicNameResourceSchema&quot;,
-            - &quot;Users&quot;,
-            - &quot;Roles&quot; and
-            - &quot;ApplicationSettings&quot;. 
+            and managed. Supported values are:
+	- "MediaVault"
+	- "ApplicationSettings"
+	- "ArticleRatingModule"
+	- "ValueSetStore"
+	- "ArticleModule"
+	- "ArticleArchiveModule"
+	- "KeyValueStore"
+	- "ResourceSchema"
+	- "MediaCenterSecurity"
+	- "Roles"
+	- "MediaCenter"
+	- "Users"
+
 
 
 * * *
@@ -42,7 +47,7 @@ Asynchronously retrieves access action resources that match the specified search
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Access action resource subset is successfully retrieved from the system. 
+ Access action resource subset is successfully retrieved from the system. 
 
 ```
  {
@@ -105,32 +110,32 @@ Asynchronously retrieves access action resources that match the specified search
 
 - ***204  No Content*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action has been successfully processed, but the response is intentionally blank. 
+ Requested action has been successfully processed, but the response is intentionally blank. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specified access action resource subset does not exist in the system. 
+ Specified access action resource subset does not exist in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 

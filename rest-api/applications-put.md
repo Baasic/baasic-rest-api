@@ -66,39 +66,55 @@ Asynchronously updates previously created application resource.
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Application resource has been successfully updated. 
+ Application resource has been successfully updated. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Required application resource does not exist in the system. 
+ Required application resource does not exist in the system. 
 
 
 - ***409  Conflict*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be carried out because of a conflict in the system. 
+ Requested action could not be carried out because of a conflict in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
+* * *
+### *Code Examples:*
+
+
+
+***CURL***
+  
+ ```
+  curl 
+   -H Authorization:"forms token"
+   -H Content-Type:application/json  
+   -X PUT 
+   -d '{"allowAnyOrigin":true,"allowUserRegistration":true,"applicationTitle":"My application","identifier":"apiKey","isActive":true,"mailFromAddress":"myApp@domain.com","origins":[]}' 
+   -v 
+   https://api.baasic.com/v1/apiKey/applications/
+  ```   
 
 * * *
 ### *Notes:* 

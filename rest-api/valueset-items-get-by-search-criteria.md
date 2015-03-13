@@ -1,8 +1,6 @@
 
 # GET : {apiKey}/value-sets/{setId}/items 
 
-### *Description:* 
-Asynchronously retrieves previously created value set item resources that match the specified criteria. 
 
 
 
@@ -13,22 +11,22 @@ Asynchronously retrieves previously created value set item resources that match 
 - ***apiKey*** - Required (string). A value that uniquely identifies user&#39;s application on the system. 
 
 
-- ***embed*** - Optional (string). Comma separated list of resources to be contained within the current representation. 
+- ***embed*** - Optional (string).  
 
 
-- ***sort*** - Optional (string). A string used to set the value set item property to sort the result collection by. 
+- ***sort*** - Optional (string).  
 
 
-- ***rpp*** - Optional (integer). A value used to limit the size of result set per page. 
+- ***rpp*** - Optional (integer).  
 
 
-- ***page*** - Optional (integer). A value used to se the page size, i.e. to retrieve certain value set item subset from the storage. 
+- ***page*** - Optional (integer).  
 
 
-- ***searchQuery*** - Optional (string). Only value set items that contain search string in the name field will be listed. 
+- ***searchQuery*** - Optional (string).  
 
 
-- ***setId*** - Required (string). Value set name whose items need to be retrieved. 
+- ***setId*** - Required (string).  
 
 
 * * *
@@ -37,7 +35,7 @@ Asynchronously retrieves previously created value set item resources that match 
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value set item subset is successfully retrieved from the system. 
+ Value set item subset is successfully retrieved from the system. 
 
 ```
  {
@@ -102,31 +100,33 @@ Asynchronously retrieves previously created value set item resources that match 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specified value set item subset does not exist in the system. 
+ Specified value set item subset does not exist in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 
 * * *
 ### *Notes:* 
 - Each object contains ***Links*** array property where each item in the array is a link description object which describes the link relations of the instances. The link relations are described by the ***href*** and ***templated*** properties. For more details on the HAL conventions see: [Hypertext Application Language] (http://stateless.co/hal_specification.html).
+
+s. For more details on the HAL conventions see: [Hypertext Application Language] (http://stateless.co/hal_specification.html).
 

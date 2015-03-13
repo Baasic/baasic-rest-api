@@ -19,7 +19,7 @@ Asynchronously inserts new dynamic schema resource into the system.
 ```
  {
   "required": [
-    "resourceName",
+    "name",
     "schema"
   ],
   "properties": {
@@ -29,14 +29,14 @@ Asynchronously inserts new dynamic schema resource into the system.
     "enforceSchemaValidation": {
       "type": "boolean"
     },
+    "name": {
+      "type": "string"
+    },
     "owner": {
       "type": "Available Object Definitions / owner"
     },
     "ownerId": {
       "type": "UID"
-    },
-    "resourceName": {
-      "type": "string"
     },
     "schema": {
       "type": "object"
@@ -64,14 +64,13 @@ Asynchronously inserts new dynamic schema resource into the system.
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New dynamic schema resource has been successfully saved into the system. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!***
+ New dynamic schema resource has been successfully saved into the system. 
+ ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!*** 
 
 ```
  {
   "required": [
-    "resourceName",
+    "name",
     "schema"
   ],
   "properties": {
@@ -81,14 +80,14 @@ Asynchronously inserts new dynamic schema resource into the system.
     "enforceSchemaValidation": {
       "type": "boolean"
     },
+    "name": {
+      "type": "string"
+    },
     "owner": {
       "type": "Available Object Definitions / owner"
     },
     "ownerId": {
       "type": "UID"
-    },
-    "resourceName": {
-      "type": "string"
     },
     "schema": {
       "type": "object"
@@ -112,27 +111,27 @@ Asynchronously inserts new dynamic schema resource into the system.
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***409  Conflict*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be carried out because of a conflict in the system. 
+ Requested action could not be carried out because of a conflict in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 

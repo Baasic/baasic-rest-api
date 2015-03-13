@@ -1,5 +1,5 @@
 
-# GET : {apiKey}/resources/{resourceName}/{id}/permissions 
+# GET : {apiKey}/resources/{schemaName}/{id}/permissions 
 
 ### *Description:* 
 Asynchronously retrieves ACL action resource from the system. 
@@ -16,7 +16,7 @@ Asynchronously retrieves ACL action resource from the system.
 - ***id*** - Required (string). Specifies dynamic entry resource whose ACL actions need to be retrieved. 
 
 
-- ***resourceName*** - Required (string). Name of dynamic schema which provides unique identification of the specified dynamic entry resource. 
+- ***schemaName*** - Required (string). Name of dynamic schema which provides unique identification of the specified dynamic entry resource. 
 
 
 * * *
@@ -25,22 +25,21 @@ Asynchronously retrieves ACL action resource from the system.
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ACL action resource subset is successfully retrieved from the system. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!***
+ ACL action resource subset is successfully retrieved from the system. 
+ ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!*** 
 
 ```
  {
   "type": "array",
   "items": {
     "action": {
-      "type": "Available Object Definitions / aCLActionModel"
+      "type": "Available Object Definitions / aCLAction"
     },
     "role": {
-      "type": "Available Object Definitions / aCLRoleModel"
+      "type": "Available Object Definitions / aCLRole"
     },
     "user": {
-      "type": "Available Object Definitions / aCLUserModel"
+      "type": "Available Object Definitions / aCLUser"
     },
     "actionId": {
       "type": "UID"
@@ -59,42 +58,39 @@ Asynchronously retrieves ACL action resource from the system.
 
 - ***204  No Content*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action has been successfully processed, but the response is intentionally blank. 
+ Requested action has been successfully processed, but the response is intentionally blank. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action because of insufficient privileges. To retrieve ACL permissions, current user needs: 
- 1. to be an account owner or 
- 2. to be assigned Super Administrators role or 
- 3. to have READ access permissions for the specified dynamic type resource. 
+ System refuses to fulfill the requested action because of insufficient privileges. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specified ACL action resource subset does not exist in the system.&lt; 
+ Specified ACL action resource subset does not exist in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 
 * * *
 ### *Available Object Definitions:*
 
-***aCLActionModel***
+***aCLAction***
 
 ```
  {
@@ -109,7 +105,7 @@ Asynchronously retrieves ACL action resource from the system.
     }
  }
 ```
-***aCLRoleModel***
+***aCLRole***
 
 ```
  {
@@ -124,7 +120,7 @@ Asynchronously retrieves ACL action resource from the system.
     }
  }
 ```
-***aCLUserModel***
+***aCLUser***
 
 ```
  {
@@ -144,3 +140,4 @@ Asynchronously retrieves ACL action resource from the system.
 - Each object contains ***Links*** array property where each item in the array is a link description object which describes the link relations of the instances. The link relations are described by the ***href*** and ***templated*** properties. For more details on the HAL conventions see: [Hypertext Application Language] (http://stateless.co/hal_specification.html).
 
 -  System supports basic CRUD ACL policies: "Create", "Delete", "Read" and "Update". 
+lete", "Read" and "Update". 

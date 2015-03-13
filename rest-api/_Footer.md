@@ -1,1 +1,0 @@
-[Home](https://google.com) | [Installation](https://google.com) | [Permissions](https://google.com) |  [Commands](https://google.com) | [Skills](https://google.com)

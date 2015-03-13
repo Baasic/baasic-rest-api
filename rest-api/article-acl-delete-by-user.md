@@ -29,38 +29,32 @@ Asynchronously deletes ACL policy assigned to the specified user and article res
 
 - ***204  No Content*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested ACL policy has been successfully removed. 
+ Requested ACL policy has been successfully removed. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. Make sure that the following requirements are fulfilled: 
- - user parameter is specified, 
- - provided access action abbreviation is valid and 
- - specified user exists in the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action because of insufficient privileges. To delete intended ACL permission, current user needs: 
- 1. to be an account owner or 
- 2. to be assigned Super Administrators role or 
- 3. to have DELETE access permissions for the specified article resource. 
+ System refuses to fulfill the requested action because of insufficient privileges. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specified article resource does not exist in the system. 
+ Specified article resource does not exist in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 

@@ -16,7 +16,8 @@ Asynchronously retrieves dynamic schema resources that match the specified crite
 - ***embed*** - Optional (string). Comma separated list of resources to be contained within the current representation. 
 
 
-- ***sort*** - Optional (string). A string used to set the dynamic schema property to sort the result collection by. 
+- ***sort*** - Optional (string). A string used to set the dynamic schema property to sort the result collection by. For complete list of
+             available properties, see the JSON representation of dynamic schema object under the Response Codes section. 
 
 
 - ***rpp*** - Optional (integer). A value used to limit the size of result set per page. 
@@ -25,7 +26,7 @@ Asynchronously retrieves dynamic schema resources that match the specified crite
 - ***page*** - Optional (integer). A value used to se the page size, i.e. to retrieve certain dynamic schema subset from the storage. 
 
 
-- ***searchQuery*** - Optional (string). Only dynamic schemas that contain search string in the name field will be listed. 
+- ***searchQuery*** - Optional (string). A string referencing dynamic schema properties using the phrase or query search. 
 
 
 * * *
@@ -34,9 +35,8 @@ Asynchronously retrieves dynamic schema resources that match the specified crite
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dynamic schema resource subset is successfully retrieved from the system. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!***
+ Dynamic schema resource subset is successfully retrieved from the system. 
+ ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!*** 
 
 ```
  {
@@ -70,7 +70,7 @@ Asynchronously retrieves dynamic schema resources that match the specified crite
   "definitions": {
     "resourceSchema": {
       "required": [
-        "resourceName",
+        "name",
         "schema"
       ],
       "properties": {
@@ -80,14 +80,14 @@ Asynchronously retrieves dynamic schema resources that match the specified crite
         "enforceSchemaValidation": {
           "type": "boolean"
         },
+        "name": {
+          "type": "string"
+        },
         "owner": {
           "type": "Available Object Definitions / owner"
         },
         "ownerId": {
           "type": "UID"
-        },
-        "resourceName": {
-          "type": "string"
         },
         "schema": {
           "type": "object"
@@ -113,32 +113,32 @@ Asynchronously retrieves dynamic schema resources that match the specified crite
 
 - ***204  No Content*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action has been successfully processed, but the response is intentionally blank. 
+ Requested action has been successfully processed, but the response is intentionally blank. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specified dynamic schema resource subset does not exist in the system. 
+ Specified dynamic schema resource subset does not exist in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 
@@ -178,4 +178,13 @@ Asynchronously retrieves dynamic schema resources that match the specified crite
 ### *Notes:* 
 - Each object contains ***Links*** array property where each item in the array is a link description object which describes the link relations of the instances. The link relations are described by the ***href*** and ***templated*** properties. For more details on the HAL conventions see: [Hypertext Application Language] (http://stateless.co/hal_specification.html).
 
--  Search is case-insensitive. 
+-  *** Search Details***
+  
+   -- See the JSON representation of dynamic schema object under the Response Codes section for
+      complete list of dynamic schema properties. Note that some properties may not be searchable.
+   -- Allowed Search Types:
+   1. Query string can be specified using the BQL (Baasic Query Language) which searches through available
+      dynamic schemas by using the basic SQL syntax. For more information on available SQL operators and
+      examples see: [https://msdn.microsoft.com/en-us/library/ms174986.aspx](https://msdn.microsoft.com/en-us/library/ms174986.aspx). This type of search is case-sensitive.
+   2. In contrast to the query string, phrase string should contain expected dynamic schema property. Only
+      dynamic schema whose property matches the search keyword will be listed. This type of search is case-insensitive. 

@@ -1,5 +1,5 @@
 
-# GET : {apiKey}/schemas/{resourceName} 
+# GET : {apiKey}/schemas/{schemaName} 
 
 ### *Description:* 
 Asynchronously retrieves previously created dynamic schema resource from the system. 
@@ -16,7 +16,7 @@ Asynchronously retrieves previously created dynamic schema resource from the sys
 - ***embed*** - Optional (string). Comma separated list of resources to be contained within the current representation. 
 
 
-- ***resourceName*** - Required (string). Name which uniquely identifies dynamic schema resource that needs to be retrieved. 
+- ***schemaName*** - Required (string). Name which uniquely identifies dynamic schema resource that needs to be retrieved. 
 
 
 * * *
@@ -25,14 +25,13 @@ Asynchronously retrieves previously created dynamic schema resource from the sys
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dynamic schema resource is successfully retrieved from the system. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!***
+ Dynamic schema resource is successfully retrieved from the system. 
+ ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!*** 
 
 ```
  {
   "required": [
-    "resourceName",
+    "name",
     "schema"
   ],
   "properties": {
@@ -42,14 +41,14 @@ Asynchronously retrieves previously created dynamic schema resource from the sys
     "enforceSchemaValidation": {
       "type": "boolean"
     },
+    "name": {
+      "type": "string"
+    },
     "owner": {
       "type": "Available Object Definitions / owner"
     },
     "ownerId": {
       "type": "UID"
-    },
-    "resourceName": {
-      "type": "string"
     },
     "schema": {
       "type": "object"
@@ -73,32 +72,32 @@ Asynchronously retrieves previously created dynamic schema resource from the sys
 
 - ***204  No Content*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action has been successfully processed, but the response is intentionally blank. 
+ Requested action has been successfully processed, but the response is intentionally blank. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specified dynamic schema resource does not exist in the system. 
+ Specified dynamic schema resource does not exist in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 

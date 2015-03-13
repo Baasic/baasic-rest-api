@@ -69,9 +69,8 @@ Asynchronously inserts new user account resource into the system, i.e. creates n
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New user account resource has been successfully saved into the system. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!***
+ New user account resource has been successfully saved into the system. 
+ ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!*** 
 
 ```
  {
@@ -98,7 +97,7 @@ Asynchronously inserts new user account resource into the system, i.e. creates n
     "roles": {
       "type": "array",
       "items": {
-        "$ref": "Available Object Definitions / roleModel"
+        "$ref": "Available Object Definitions / role"
       }
     },
     "userName": {
@@ -123,34 +122,34 @@ Asynchronously inserts new user account resource into the system, i.e. creates n
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. Please check Captcha challenge request. 
+ Requested action could not be understood by the system. Please check Captcha challenge request. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. If User Registration is not enabled for the current application, requested action will be refused. 
+ System refuses to fulfill the requested action. If User Registration is not enabled for the current application, requested action will be refused. 
 
 
 - ***409  Conflict*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be carried out because of a conflict in the system. 
+ Requested action could not be carried out because of a conflict in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 
 * * *
 ### *Available Object Definitions:*
 
-***roleModel***
+***role***
 
 ```
  {
@@ -185,4 +184,6 @@ Asynchronously inserts new user account resource into the system, i.e. creates n
 * * *
 ### *Notes:* 
 - Each object contains ***Links*** array property where each item in the array is a link description object which describes the link relations of the instances. The link relations are described by the ***href*** and ***templated*** properties. For more details on the HAL conventions see: [Hypertext Application Language] (http://stateless.co/hal_specification.html).
+
+html).
 

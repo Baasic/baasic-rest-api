@@ -14,7 +14,7 @@ Asynchronously handles authentication request according to the specified login t
 
 
 - ***options*** - Optional (string). Comma separated list of options used to setup authentication token with cookie session. Supported values
-            are: &quot;session&quot; and &quot;sliding&quot;. 
+             are: &quot;session&quot; and &quot;sliding&quot;. 
 
 
 - ***type*** - Optional (string). A Login Type which defines how the user authenticates into the system. Supported values are: &quot;oauth&quot; and &quot;forms&quot;. 
@@ -26,7 +26,7 @@ Asynchronously handles authentication request according to the specified login t
 
 - ***201  Created*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Authentication token has been successfully created, i.e user has been successfully logged into the system. Response contains authentication token and timeout information. 
+ Authentication token has been successfully created, i.e user has been successfully logged into the system. Response contains authentication token and timeout information. 
 
 ```
  {
@@ -38,27 +38,27 @@ Asynchronously handles authentication request according to the specified login t
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires valid credentials. 
+ Requested action requires valid credentials. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***409  Conflict*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be carried out because of a conflict in the system. 
+ Requested action could not be carried out because of a conflict in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 
@@ -67,7 +67,7 @@ Asynchronously handles authentication request according to the specified login t
 - Each object contains ***Links*** array property where each item in the array is a link description object which describes the link relations of the instances. The link relations are described by the ***href*** and ***templated*** properties. For more details on the HAL conventions see: [Hypertext Application Language] (http://stateless.co/hal_specification.html).
 
 -  Login Types: OAuth - allows third-party access to the Baasic resources without sharing login credentials and
-  Forms - requires login credentials for access to the Baasic resources.
+   Forms - requires login credentials for access to the Baasic resources.
   
-  Login Options: Session - user gets non session cookie with a timeout and Sliding - user gets session cookie
-  with a timeout and sliding expiration renewal. 
+   Login Options: Session - user gets non session cookie with a timeout and Sliding - user gets session cookie
+   with a timeout and sliding expiration renewal. 

@@ -16,7 +16,8 @@ Asynchronously retrieves article resources that match the specified criteria.
 - ***embed*** - Optional (string). Comma separated list of resources to be contained within the current representation. 
 
 
-- ***sort*** - Optional (string). A string used to set the article property to sort the result collection by. 
+- ***sort*** - Optional (string). A string used to set the article property to sort the result collection by. For complete list of available
+             properties, see the JSON representation of article object under the Response Codes section. 
 
 
 - ***rpp*** - Optional (integer). A value used to limit the size of result set per page. 
@@ -29,17 +30,17 @@ Asynchronously retrieves article resources that match the specified criteria.
 
 
 - ***statuses*** - Optional (string). Comma separated list of article statuses that specify where search should be done (Allowed statuses:
-            Published, Draft and Archived). 
+             Published, Draft and Archived). 
 
 
 - ***endDate*** - Optional (ISO 8601 Format). A value used to specify the article creation date until (and including) which article resource collection
-            should be returned. 
+             should be returned. 
 
 
 - ***startDate*** - Optional (ISO 8601 Format). A value used to specify the article creation date starting from which article resource collection should be returned. 
 
 
-- ***searchQuery*** - Optional (string). A string referencing article rating properties using the phrase or query search. 
+- ***searchQuery*** - Optional (string). A string referencing article properties using the phrase or query search. 
 
 
 * * *
@@ -48,20 +49,14 @@ Asynchronously retrieves article resources that match the specified criteria.
 
 - ***200  OK*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Article subset is successfully retrieved from the system. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!***
+ Article subset is successfully retrieved from the system. 
+ ***Please check the [Available Object Definitions](#available-object-definitions) documentation part for more details on the available embeds!*** 
 
 ```
  {
   "required": [],
   "properties": {
-    "statistics": {
-      "type": "Available Object Definitions / stats"
-    },
-    "embed": [
-      "statistics"
-    ],
+    "embed": [],
     "item": {
       "type": "array",
       "items": {
@@ -103,7 +98,7 @@ Asynchronously retrieves article resources that match the specified criteria.
         "comments": {
           "type": "array",
           "items": {
-            "$ref": "Available Object Definitions / commentModel"
+            "$ref": "Available Object Definitions / comment"
           }
         },
         "content": {
@@ -115,7 +110,7 @@ Asynchronously retrieves article resources that match the specified criteria.
         "ratings": {
           "type": "array",
           "items": {
-            "$ref": "Available Object Definitions / ratingModel"
+            "$ref": "Available Object Definitions / rating"
           }
         },
         "slug": {
@@ -127,7 +122,7 @@ Asynchronously retrieves article resources that match the specified criteria.
         "tags": {
           "type": "array",
           "items": {
-            "$ref": "Available Object Definitions / tagModel"
+            "$ref": "Available Object Definitions / tag"
           }
         },
         "title": {
@@ -157,77 +152,38 @@ Asynchronously retrieves article resources that match the specified criteria.
 
 - ***204  No Content*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action has been successfully processed, but the response is intentionally blank. 
+ Requested action has been successfully processed, but the response is intentionally blank. 
 
 
 - ***400  Bad Request*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action could not be understood by the system. 
+ Requested action could not be understood by the system. 
 
 
 - ***401  Unauthorized*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Requested action requires authentication. 
+ Requested action requires authentication. 
 
 
 - ***403  Forbidden*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System refuses to fulfill the requested action. 
+ System refuses to fulfill the requested action. 
 
 
 - ***404  Not Found*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specified article resource does not exist in the system. 
+ Specified article resource does not exist in the system. 
 
 
 - ***500  Internal Server Error*** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A generic error has occurred on the system. 
+ A generic error has occurred on the system. 
 
 
 
 * * *
 ### *Available Object Definitions:*
 
-***stats***
-
-```
- {
-    "required": [],
-    "properties": {
-      "archiveCount": {
-        "type": "integer"
-      },
-      "draftCount": {
-        "type": "integer"
-      },
-      "publishedCount": {
-        "type": "integer"
-      },
-      "tagStats": {
-        "type": "array",
-        "items": {
-          "type": "object"
-        }
-      },
-      "dateCreated": {
-        "type": "ISO 8601 Format"
-      },
-      "dateUpdated": {
-        "type": "ISO 8601 Format"
-      },
-      "id": {
-        "type": "UID"
-      },
-      "embed": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      }
-    }
- }
-```
 ***author***
 
 ```
@@ -257,7 +213,7 @@ Asynchronously retrieves article resources that match the specified criteria.
     }
  }
 ```
-***commentModel***
+***comment***
 
 ```
  {
@@ -305,7 +261,7 @@ Asynchronously retrieves article resources that match the specified criteria.
     }
  }
 ```
-***ratingModel***
+***rating***
 
 ```
  {
@@ -338,7 +294,7 @@ Asynchronously retrieves article resources that match the specified criteria.
     }
  }
 ```
-***tagModel***
+***tag***
 
 ```
  {
@@ -375,6 +331,14 @@ Asynchronously retrieves article resources that match the specified criteria.
 ### *Notes:* 
 - Each object contains ***Links*** array property where each item in the array is a link description object which describes the link relations of the instances. The link relations are described by the ***href*** and ***templated*** properties. For more details on the HAL conventions see: [Hypertext Application Language] (http://stateless.co/hal_specification.html).
 
--  Search Types (Search is case-sensitive): 
-  1. Query string can be specified using the BQL (Baasic Query Language) which searches through available article resources by using the basic SQL syntax. For more information on available SQL operators and examples see: [https://msdn.microsoft.com/en-us/library/ms174986.aspx](https://msdn.microsoft.com/en-us/library/ms174986.aspx).
-  2. In contrast to the query string, phrase string should contain keyword or exact sentence. Only articles that contain phrase string in at least one of the search fields will be listed. Search fields are: article author and article name. 
+-  *** Search Details***
+  
+   -- See the JSON representation of article object under the Response Codes section for
+      complete list of article properties. Note that some properties may not be searchable.
+   -- Allowed Search Types:
+   1. Query string can be specified using the BQL (Baasic Query Language) which searches through available
+      article resources by using the basic SQL syntax. For more information on available SQL operators and
+      examples see: [https://msdn.microsoft.com/en-us/library/ms174986.aspx](https://msdn.microsoft.com/en-us/library/ms174986.aspx). This type of search is case-sensitive.
+   2. In contrast to the query string, phrase string should contain expected article resource property. Only
+      article resource whose property matches the search keyword will be listed. This type of search is case-insensitive. 
+search is case-insensitive. 
