@@ -8,7 +8,6 @@ Baasic back-end contains various built-in modules that can be easily consumed th
 
 * [Core](https://github.com/Baasic/baasic-rest-api/wikis/_sidebar#core)
 * [Membership](https://github.com/Baasic/baasic-rest-api/wikis/_sidebar#membership)
-* [Application Module](https://github.com/Baasic/baasic-rest-api/wikis/_sidebar#application)
 * [Key Value Module](https://github.com/Baasic/baasic-rest-api/wikis/_sidebar#key-value)
 * [Value Set Module](https://github.com/Baasic/baasic-rest-api/wikis/_sidebar#value-set)
 * [Dynamic Resources Module](https://github.com/Baasic/baasic-rest-api/wikis/_sidebar#dynamic-type)
