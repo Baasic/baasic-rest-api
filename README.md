@@ -1,6 +1,6 @@
 # Baasic REST API
 
-Baasic REST API Documentation provides detailed information for all Baasic [REST API](https://api.baasic.com/v1/) end-points. Documentation can be found under the [Wiki](../../wikis/home) section
+Baasic REST API Documentation provides detailed information for all Baasic [REST API](https://api.baasic.com/beta/) end-points. Documentation can be found under the [Wiki](../../wikis/home) section
 
 ## Baasic Modules
 
