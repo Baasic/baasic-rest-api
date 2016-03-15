@@ -7,12 +7,15 @@ Baasic REST API Documentation provides detailed information for all Baasic [REST
 Baasic back-end contains various built-in modules that can be easily consumed through the Baasic REST API. Below can be found detailed information about all the modules supported by the REST API.
 
 * Core
+* Media Vault
+* Files
 * Membership
 * Key Value Module
 * Value Set Module
 * Article Module
 * Dynamic Resources Module
 * Subscription System
+* User Profile Module
 
 # Issue reporting
 
