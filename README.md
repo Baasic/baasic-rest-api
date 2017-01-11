@@ -1,6 +1,6 @@
 # Baasic REST API
 
-Baasic REST API Documentation provides detailed information for all Baasic [REST API](https://api.baasic.com/v1/) end-points. Documentation can be found on the [Baasic Developer Center](http://dev.baasic.com) section
+Baasic REST API Documentation provides detailed information for all Baasic [REST API](https://api.baasic.com/v1/) end-points. Documentation can be found on the [Baasic Developer Center](http://dev.baasic.com).
 
 ## Baasic Modules
 
@@ -111,4 +111,4 @@ Before you create a new issue, please make sure it hasn't already been reported.
 ## Other
 
 * Help us write the documentation
-* Looking for something else to do? Get in [touch](https://groups.google.com/forum/#!forum/baasic-baas)..
+* Looking for something else? Get in [touch](https://groups.google.com/forum/#!forum/baasic-baas)..
